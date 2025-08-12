@@ -51,7 +51,7 @@ public unsafe class Zhouyi_SCH
         ImGui.Separator();
         ImGui.Spacing();
         var isstarted = IsStarted;
-        if (ImGui.Checkbox("开启", ref isstarted)) {IsStarted=isstarted; }
+        if (ImGui.Checkbox("开启##SCH", ref isstarted)) {IsStarted=isstarted; }
         var jiyan = UseJiyan;
         var gudu = UseGudu;
         ImGui.Separator();

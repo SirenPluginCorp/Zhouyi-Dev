@@ -33,7 +33,7 @@ namespace Zhouyi.Utils
         {
             return AgentMap.Instance()->IsPlayerMoving;
         }
-
+        public unsafe static float GetNowActionRemainingTime(uint action) { return ActionManager.Instance()->GetRecastTime(ActionType.Action, action) - ActionManager.Instance()->GetRecastTimeElapsed(ActionType.Action, action); }
         public static unsafe bool IsBlocked(GameObject* source, GameObject* target)
         {
             var sourcePos = *source->GetPosition();

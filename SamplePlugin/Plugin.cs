@@ -109,5 +109,9 @@ public sealed class Plugin : IDalamudPlugin
         {
             Zhouyi_SCH.OnUpdate(this);
         }
+        if (me.Struct()->ClassJob == 37)
+        {
+            Zhouyi_GNB.OnUpdate(this);
+        }
     }
 }

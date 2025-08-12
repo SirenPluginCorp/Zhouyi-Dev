@@ -137,12 +137,20 @@ public class MainWindow : Window, IDisposable
 
                         ImGui.Text($" 龟壳状态 {ActionManager.Instance()->IsActionOffCooldown(ActionType.Action, 29054)}");
 
+                        // Fix for CS0019: 运算符“??”无法应用于“float”和“float”类型的操作数  
+                        // The null-coalescing operator `??` is used for nullable types. Since `float` is not nullable, the error occurs.  
+                        // Replace `??` with `Math.Max` to ensure proper comparison between two float values.  
+
                         ImGui.Separator();
                         ImGui.Spacing();
 
                         if (me.Struct()->ClassJob == 28)
                         {
                             Zhouyi_SCH.OnDraw(Plugin);
+                        }
+                        if (me.Struct()->ClassJob == 37)
+                        {
+                            Zhouyi_GNB.OnDraw(Plugin); // 新增：GNB职业调用
                         }
                     }
                 }
